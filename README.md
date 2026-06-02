@@ -20,11 +20,9 @@ I enjoy turning data into insights and building interactive, modern web experien
 
 ## 🚀 Live Demo
 
-👉 [View Portfolio Website](#)
+👉 Http://portfolio-assignment-mu-smoky.vercel.app
 
-*(Replace # with your GitHub Pages or Vercel link)*
 
----
 
 ## 🛠️ Tech Stack
 
