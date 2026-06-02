@@ -1,0 +1,651 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   ROOT (PURPLE ACADEMIC THEME)
+========================= */
+
+:root{
+    --primary:#8B5CF6;
+    --secondary:#A855F7;
+    --bg:#0B0614;
+    --card:rgba(255,255,255,0.06);
+    --border:rgba(255,255,255,0.12);
+    --text:#ffffff;
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at top, #1a0b2e, #0B0614);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND GLOW (PURPLE ACADEMIC FEEL)
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    top:-200px;
+    left:-200px;
+    width:600px;
+    height:600px;
+    background:#8B5CF6;
+    filter:blur(150px);
+    opacity:.25;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    bottom:-200px;
+    right:-200px;
+    width:600px;
+    height:600px;
+    background:#A855F7;
+    filter:blur(150px);
+    opacity:.2;
+    z-index:-1;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(10,6,20,.6);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+    z-index:999;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    color:var(--primary);
+}
+
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+/* =========================
+   HERO SECTION (ACADEMIC STYLE)
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 8%;
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.hero-image{
+    position:relative;
+}
+
+.hero-image::before{
+    content:"";
+    position:absolute;
+    inset:-20px;
+    background:#8B5CF6;
+    filter:blur(60px);
+    opacity:.4;
+    z-index:-1;
+    border-radius:50%;
+}
+
+.hero-image img{
+    width:320px;
+    height:380px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #8B5CF6;
+
+    box-shadow:
+    0 0 30px #8B5CF6,
+    0 0 60px rgba(139,92,246,.4);
+
+    transition:.4s;
+}
+
+.hero-image img:hover{
+    transform:scale(1.05);
+}
+
+
+.hero h1{
+    font-size:3.5rem;
+}
+
+.hero h2{
+    font-size:2rem;
+    color:white;
+    text-shadow:
+        0 0 10px rgba(139,92,246,0.6),
+        0 0 20px rgba(139,92,246,0.4);
+}
+
+.hero p{
+    max-width:600px;
+    margin:20px auto;
+    color:#ccc;
+    line-height:1.8;
+}
+
+.cursor{
+    color:#8B5CF6;
+    font-weight:bold;
+    animation:blink 0.8s infinite;
+}
+
+@keyframes blink{
+    0%,100% {opacity:1;}
+    50% {opacity:0;}
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    background:linear-gradient(45deg,var(--primary),var(--secondary));
+    color:white;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px var(--primary);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:var(--primary);
+}
+
+/* =========================
+   ABOUT BOX
+========================= */
+
+.about-box{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    line-height:1.8;
+    max-width:800px;
+    margin:auto;
+}
+
+/* =========================
+   EDUCATION TIMELINE
+========================= */
+
+.timeline{
+    max-width:800px;
+    margin:auto;
+}
+
+.timeline-item{
+    background:var(--card);
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:15px;
+    border-left:4px solid var(--primary);
+    backdrop-filter:blur(15px);
+}
+
+.timeline-item h3{
+    color:var(--primary);
+}
+
+/* =========================
+   PROJECT CARDS
+========================= */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    background:var(--card);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    transition:.3s;
+    backdrop-filter:blur(15px);
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(139,92,246,.4);
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skill{
+    margin-bottom:25px;
+}
+
+.skill-info{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.bar{
+    width:100%;
+    height:12px;
+    background:rgba(255,255,255,0.1);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+    border-radius:20px;
+    position:relative;
+
+    background:linear-gradient(
+        90deg,
+        #8B5CF6,
+        #A855F7
+    );
+
+    animation:skillAnimation 2s ease forwards;
+}
+
+.html{
+    width:95%;
+}
+
+.css{
+    width:90%;
+}
+
+.js{
+    width:85%;
+}
+
+.python{
+    width:80%;
+}
+
+.data{
+    width:75%;
+}
+
+@keyframes skillAnimation{
+
+    from{
+        width:0;
+    }
+
+}
+
+.fill::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    top:0;
+
+    width:20px;
+    height:100%;
+
+    background:white;
+
+    opacity:.8;
+
+    filter:blur(8px);
+
+    animation:shine 2s infinite;
+}
+
+@keyframes shine{
+
+    0%{
+        transform:translateX(-300px);
+    }
+
+    100%{
+        transform:translateX(50px);
+    }
+
+}
+
+.skill:hover{
+
+    transform:translateY(-5px);
+
+    transition:.3s;
+
+}
+
+/* ===================================
+   PROJECTS SECTION
+=================================== */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.project-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;
+    overflow:hidden;
+    backdrop-filter:blur(15px);
+    transition:.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(139,92,246,.4);
+}
+
+.project-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.project-card:hover img{
+    transform:scale(1.08);
+}
+
+.project-content{
+    padding:20px;
+}
+
+.project-content h3{
+    color:#8B5CF6;
+    margin-bottom:10px;
+}
+
+.project-content p{
+    color:#d1d5db;
+    line-height:1.7;
+}
+
+.project-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(
+        45deg,
+        #8B5CF6,
+        #A855F7
+    );
+}
+
+.project-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,textarea{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:rgba(255,255,255,.07);
+    color:white;
+    outline:none;
+}
+
+button{
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(45deg,var(--primary),var(--secondary));
+    color:white;
+    cursor:pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid var(--border);
+    color:#aaa;
+}
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    nav{
+        display:none;
+    }
+}
+
+/* =========================
+   CONTACT SECTION PREMIUM
+========================= */
+
+.contact-form{
+    max-width:800px;
+    margin:auto;
+    padding:40px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 30px rgba(139,92,246,0.15);
+}
+
+.input-box{
+    position:relative;
+    margin-bottom:25px;
+}
+
+.input-box input,
+.input-box textarea{
+    width:100%;
+    padding:15px;
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:10px;
+    color:white;
+    outline:none;
+    transition:0.3s;
+}
+
+.input-box input:focus,
+.input-box textarea:focus{
+    border-color:#8B5CF6;
+    box-shadow:0 0 15px rgba(139,92,246,0.4);
+}
+
+.input-box label{
+    position:absolute;
+    left:15px;
+    top:15px;
+    color:#aaa;
+    pointer-events:none;
+    transition:0.3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label,
+.input-box textarea:focus ~ label,
+.input-box textarea:valid ~ label{
+    top:-10px;
+    left:10px;
+    font-size:12px;
+    color:#8B5CF6;
+    background:#0B0614;
+    padding:0 5px;
+}
+
+.contact-form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(45deg,#8B5CF6,#A855F7);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(139,92,246,0.3);
+}
+
+.contact-form button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(139,92,246,0.6);
+}
+
+/* =========================
+   CONTACT LAYOUT
+========================= */
+
+.contact-container{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+/* INFO BOXES */
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.info-box{
+    background:rgba(255,255,255,0.06);
+    padding:20px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    width:280px;
+    transition:0.3s;
+}
+
+.info-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(139,92,246,0.4);
+}
+
+.info-box h3{
+    color:#8B5CF6;
+    margin-bottom:5px;
+}
+
+.info-box p{
+    color:#d1d5db;
+}
+
