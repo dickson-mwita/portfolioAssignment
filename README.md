@@ -22,6 +22,7 @@ I enjoy turning data into insights and building interactive, modern web experien
 
 👉 Http://portfolio-assignment-mu-smoky.vercel.app
 
+---
 
 
 ## 🛠️ Tech Stack
